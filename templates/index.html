@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>Ibukun Oduntan's Bincom Test</h1></div>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h2>Question 1</h2>
+            <p class="text">
+                Create a page to display the result for any individual
+                polling unit on a web page
+            </p>
+            <form method = "POST" action = ""> 
+                <label> Enter Unique Poll ID </label> 
+                <input type=”text” name="upi">  
+            
+                <button type=”submit” formaction="{{ url_for('quest_1') }}"> Submit </button> 
+            </form> 
+            
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h2>Question 2</h2>
+            <p class="text">
+                Create a page to display the summed total result of all
+                the polling units under any particular local government
+            </p>
+            <a href="{{ url_for('quest_2') }}"><button>Solution</button></a>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h2>Question 3</h2>
+            <p class="text">
+                Create a page to be used to store results for ALL parties for a new polling unit.
+            </p>
+            <a href="{{ url_for('quest_3') }}"><button>Solution</button></a>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

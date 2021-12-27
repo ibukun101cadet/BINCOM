@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="top">
+        <div class="title"><h1>Question 3</h1></div>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h2>Answer</h2>
+            <form method="post">
+                <input type="text" id="name" placeholder="Username" name="name" required>
+                <br>
+                <p>PDP = <input type="number" id="pdp" placeholder="Count" name="pdp" required></p>
+                <p>DPP = <input type="number" id="dpp" placeholder="Count" name="dpp" required></p>
+                <p>ACN = <input type="number" id="acn" placeholder="Count" name="acn" required></p>
+                <p>PPA = <input type="number" id="ppa" placeholder="Count" name="ppa" required></p>
+                <p>CDC = <input type="number" id="cdc" placeholder="Count" name="cdc" required></p>
+                <p>JP = <input type="number" id="jp" placeholder="Count" name="jp" required></p>
+                <p>ANPP = <input type="number" id="anpp" placeholder="Count" name="anpp" required></p>
+                <p>LABO = <input type="number" id="labo" placeholder="Count" name="labo" required></p>
+                <p>CPP = <input type="number" id="cpp" placeholder="Count" name="cpp" required></p>
+
+                <button type="submit" style="width: 20%" role="button">Submit</button>
+            </form>
+            <br>
+            {% if show == False %}
+            <a href="{{ url_for('index') }}"><button>⬅ HomePage</button></a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if show %}
+    <div class="content">
+        <div class="card">
+            <h2>New polling unit</h2>
+            <p style="font-family:courier;">Id, Polling id, Party, Score, User, Date, Ip address</p>
+            {% for x in polls %}
+            <p style="font-family:courier;">{{ x[0] }}|{{ x[1] }}|{{ x[2] }}|{{ x[3] }}|{{ x[4] }}|{{ x[5] }}|{{ x[6] }}|{{ x[7] }}</p>
+            {% endfor %}
+            <br>
+            <a href="{{ url_for('index') }}"><button>⬅ HomePage</button></a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}
